@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using desktop_translator.Core;
 
 namespace CMS.MVVM.Model
 {
-    internal class HomeModel
+    class HomeModel : ObservableObject
     {
     }
 }
