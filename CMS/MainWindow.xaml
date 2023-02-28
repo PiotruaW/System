@@ -27,8 +27,8 @@
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#FF252525" Offset="0"/>
-                    <GradientStop Color="#FF343434" Offset="1"/>
+                    <GradientStop Color="#FFD2D2D2" Offset="0"/>
+                    <GradientStop Color="#FF4B6BD0" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -102,7 +102,7 @@
                 Grid.RowSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition x:Name="PanelColumn" Width="160"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" CornerRadius="10 0 0 10">
@@ -122,46 +122,65 @@
                         </LinearGradientBrush>
                     </Border.Background>
                 </Border>
-                <StackPanel>
+
+                <StackPanel Margin="0 10 0 0">
+
+                    <Button Style="{StaticResource menuButton}" Click="HidePanel">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage x:Name="HideIcon" Icon="ArrowAltCircleLeft" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Hide" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Separator Width="140" 
+                               x:Name="MainPanelSeparator"
+                               Foreground="#bccaf1" 
+                               Background="#FF6A79BD"
+                               Margin="0 -10 0 0"/>
+
                     <Button Style="{StaticResource menuButton}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Home" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
+
                     <Button Style="{StaticResource menuButton}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Car" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Add Car" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
+
                     <Button Style="{StaticResource menuButton}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Table" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Car list" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
+
                     <Button Style="{StaticResource menuButton}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Bell" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Notifications" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
+
                     <Button Style="{StaticResource menuButton}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
+
                     <Button Style="{StaticResource menuButton}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="FacebookMessenger" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Contact" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
+
                 </StackPanel>
-                
-                
             </Grid>
         </Border>
         

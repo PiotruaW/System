@@ -40,5 +40,21 @@ namespace CMS
                 this.WindowState = WindowState.Normal;
             }
         }
+
+        private void HidePanel(object sender, RoutedEventArgs e)
+        {
+            if (PanelColumn.Width.Value == 50)
+            {
+                PanelColumn.Width = new GridLength(160);
+                HideIcon.Icon = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+                MainPanelSeparator.Width = 140;
+            }
+            else
+            {
+                PanelColumn.Width = new GridLength(50);
+                HideIcon.Icon = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
+                MainPanelSeparator.Width = 40;
+            }
+        }
     }
 }
