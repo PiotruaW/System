@@ -4,34 +4,167 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMS"
+        xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         Title="MainWindow" Height="740" Width="1280"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         Background="Transparent">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-        <Border CornerRadius="10 0 0 10">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!-- TopBar -->
+        <Border CornerRadius="10"
+                Grid.RowSpan="2"
+                MouseDown="Border_MouseDown">
+
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#223266" Offset="0"/>
-                    <GradientStop Color="#FF334883" Offset="1"/>
+                    <GradientStop Color="#FF252525" Offset="0"/>
+                    <GradientStop Color="#FF343434" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!-- MinxButton-->
+                <Grid Grid.Column="1" 
+                      Grid.Row="0" 
+                      x:Name="MinBT"
+                      MouseLeftButtonDown="MinButton" 
+                      Style="{StaticResource MinTheme}">
+
+                    <Path Stroke="White">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry EndPoint="26,25" StartPoint="14,25"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Grid>
+                <!-- MaxButton-->
+                <Grid Grid.Column="2" 
+                      Grid.Row="0" 
+                      x:Name="MaxBT"
+                      MouseLeftButtonDown="MaxButton" 
+                      Style="{StaticResource MaxTheme}">
+                    
+                    <Path Stroke="White">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <RectangleGeometry Rect="14 14 12.5 12.5"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Grid>
+                <!-- ExitButton-->
+                <Grid Grid.Column="3" 
+                      Grid.Row="0" 
+                      x:Name="ExitBT"
+                      MouseLeftButtonDown="ExitButton"
+                      Style="{StaticResource ExtTheme}">
+                    
+                    <Path Stroke="White">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry EndPoint="25,15" StartPoint="15,25"/>
+                                <LineGeometry EndPoint="15,15" StartPoint="25,25"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Grid>
+
+            </Grid>
         </Border>
 
-        <Border Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="1.5,0" EndPoint="0,1">
-                    <GradientStop Color="#FF334883" Offset="0"/>
-                    <GradientStop Color="#FF223265" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
+        <!-- Main panel -->
+
+        <Border Grid.Row="1"
+                Grid.RowSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" CornerRadius="10 0 0 10">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="#223266" Offset="0"/>
+                            <GradientStop Color="#FF334883" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+
+                <Border Grid.Column="1" CornerRadius="0 10 10 0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="1.5,0" EndPoint="0,1">
+                            <GradientStop Color="#FF334883" Offset="0"/>
+                            <GradientStop Color="#FF223265" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+                <StackPanel>
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Home" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Car" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Add Car" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Table" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Car list" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Bell" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Notifications" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="FacebookMessenger" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Contact" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                
+                
+            </Grid>
         </Border>
+        
+        
     </Grid>
 </Window>
