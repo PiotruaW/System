@@ -186,6 +186,13 @@
                         </StackPanel>
                     </Button>
 
+                    <Button Style="{StaticResource menuButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="LifeRing" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Taśmy watykanu" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </Button>
+
                 </StackPanel>
             </Grid>
         </Border>
