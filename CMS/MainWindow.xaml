@@ -32,8 +32,8 @@
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#FFD2D2D2" Offset="0"/>
-                    <GradientStop Color="#FF4B6BD0" Offset="1"/>
+                    <GradientStop Color="{StaticResource TopBarGradient1}" Offset="0"/>
+                    <GradientStop Color="{StaticResource TopBarGradient2}" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -113,8 +113,8 @@
                 <Border Grid.Column="0" CornerRadius="10 0 0 10">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                            <GradientStop Color="#223266" Offset="0"/>
-                            <GradientStop Color="#FF334883" Offset="1"/>
+                            <GradientStop Color="{StaticResource GradientTop}" Offset="0"/>
+                            <GradientStop Color="{StaticResource GradientBottom}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
                 </Border>
@@ -122,8 +122,8 @@
                 <Border Grid.Column="1" CornerRadius="0 10 10 0">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="1.5,0" EndPoint="0,1">
-                            <GradientStop Color="#FF334883" Offset="0"/>
-                            <GradientStop Color="#FF223265" Offset="1"/>
+                            <GradientStop Color="{StaticResource GradientBottom}" Offset="0"/>
+                            <GradientStop Color="{StaticResource GradientTop}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
                 </Border>
@@ -140,56 +140,48 @@
 
                     <Separator Width="140" 
                                x:Name="MainPanelSeparator"
-                               Foreground="#bccaf1" 
-                               Background="#FF6A79BD"
-                               Margin="0 -10 0 0"/>
-
-                    <Button Style="{StaticResource menuButton}">
+                               Margin="0 -10 0 0"
+                               Background="#FF6A79BD"/>
+                    
+                    <Button Style="{StaticResource menuButton}" Command="{Binding HomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}" Command="{Binding AddViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Car" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Add car" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}" Command="{Binding ListViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Table" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Car list" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}" Command="{Binding NotificationsViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Bell" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Notifications" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}" Command="{Binding SettingsViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}" Command="{Binding HomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Question" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Help" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="LifeRing" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Taśmy watykanu" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
