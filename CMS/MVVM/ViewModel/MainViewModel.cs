@@ -46,7 +46,7 @@ namespace CMS.MVVM.ViewModel
             NotificationsVM = new NotificationsViewModel();
             SettingsVM = new SettingsViewModel();
 
-            CurrentView = HomeVM;
+            CurrentView = AddVM;
 
             AddViewCommand = new RelayCommand(o =>
             {

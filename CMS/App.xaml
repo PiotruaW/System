@@ -10,6 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/BarButtonsTheme.xaml"/>
                 <ResourceDictionary Source="Theme/MenuButtonsTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AddViewModelTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

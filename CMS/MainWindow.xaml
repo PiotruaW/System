@@ -192,8 +192,13 @@
                             <TextBlock Text="Taśmy watykanu" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
-
                 </StackPanel>
+                
+                <ContentControl Content="{Binding CurrentView}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Grid.Column="1"
+                                Grid.Row="0"/>
             </Grid>
         </Border>
         
