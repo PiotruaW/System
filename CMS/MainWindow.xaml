@@ -24,11 +24,10 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <!-- TopBar -->
         <Border CornerRadius="10"
-                Grid.RowSpan="2"
-                MouseDown="Border_MouseDown">
+                Grid.RowSpan="2">
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -72,7 +71,7 @@
                       x:Name="MaxBT"
                       MouseLeftButtonDown="MaxButton" 
                       Style="{StaticResource MaxTheme}">
-                    
+
                     <Path Stroke="White">
                         <Path.Data>
                             <GeometryGroup>
@@ -87,7 +86,7 @@
                       x:Name="ExitBT"
                       MouseLeftButtonDown="ExitButton"
                       Style="{StaticResource ExtTheme}">
-                    
+
                     <Path Stroke="White">
                         <Path.Data>
                             <GeometryGroup>
@@ -97,6 +96,10 @@
                         </Path.Data>
                     </Path>
                 </Grid>
+                <Grid Grid.Column="0"
+                      Grid.Row="0"
+                      MouseDown="Border_MouseDown"
+                      Background="Transparent"/>
 
             </Grid>
         </Border>
@@ -105,7 +108,7 @@
 
         <Border Grid.Row="1"
                 Grid.RowSpan="2">
-            <Grid>
+            <Grid x:Name="GridMainPanel">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition x:Name="PanelColumn" Width="160"/>
                     <ColumnDefinition/>
@@ -127,7 +130,7 @@
                         </LinearGradientBrush>
                     </Border.Background>
                 </Border>
-                
+
                 <!-- Button panel -->
                 <StackPanel Margin="0 10 0 0">
 
@@ -185,23 +188,19 @@
                             <TextBlock Text="Help" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </Button>
-
-                    <Button Style="{StaticResource menuButton}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="LifeRing" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Taśmy watykanu" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </Button>
                 </StackPanel>
-                
-                <ContentControl Content="{Binding CurrentView}"
+
+                <ContentControl x:Name="ContentControlView"
+                                Content="{Binding CurrentView}"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
                                 Grid.Column="1"
-                                Grid.Row="0"/>
+                                Grid.Row="0"
+                                Width="1120"
+                                Height="700"/>
             </Grid>
         </Border>
-        
-        
+
+
     </Grid>
 </Window>

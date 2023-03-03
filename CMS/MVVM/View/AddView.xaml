@@ -8,8 +8,9 @@
              mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"/>
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="80"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -20,6 +21,11 @@
                 <fa:IconImage Icon="IdCard" Style="{StaticResource IconImageTheme}"/>
                 <TextBlock Text="Owner:" Style="{StaticResource TextBlockTheme}"/>
             </StackPanel>
+            
+            <StackPanel Style="{StaticResource StackTextBoxesTheme}">
+                <fa:IconImage Icon="CropAlt" Style="{StaticResource IconImageTheme}"/>
+                <TextBlock Text="Department:" Style="{StaticResource TextBlockTheme}"/>
+            </StackPanel>
 
             <StackPanel Style="{StaticResource StackTextBoxesTheme}">
                 <fa:IconImage Icon="Pager" Style="{StaticResource IconImageTheme}"/>
@@ -27,22 +33,22 @@
             </StackPanel>
 
             <StackPanel Style="{StaticResource StackTextBoxesTheme}">
-                <fa:IconImage Icon="Car" Style="{StaticResource IconImageTheme}"/>
+                <fa:IconImage Icon="Warehouse" Style="{StaticResource IconImageTheme}"/>
                 <TextBlock Text="Mark:" Style="{StaticResource TextBlockTheme}"/>
             </StackPanel>
 
             <StackPanel Style="{StaticResource StackTextBoxesTheme}">
-                <fa:IconImage Icon="None"  Style="{StaticResource IconImageTheme}"/>
+                <fa:IconImage Icon="Car"  Style="{StaticResource IconImageTheme}"/>
                 <TextBlock Text="Model:" Style="{StaticResource TextBlockTheme}"/>
             </StackPanel>
 
             <StackPanel Style="{StaticResource StackTextBoxesTheme}">
-                <fa:IconImage Icon="None" Style="{StaticResource IconImageTheme}"/>
+                <fa:IconImage Icon="Minus" Style="{StaticResource IconImageTheme}"/>
                 <TextBlock Text="Registration plate:" Style="{StaticResource TextBlockTheme}"/>
             </StackPanel>
 
             <StackPanel Style="{StaticResource StackTextBoxesTheme}">
-                <fa:IconImage Icon="None" Style="{StaticResource IconImageTheme}"/>
+                <fa:IconImage Icon="CalendarAlt" Style="{StaticResource IconImageTheme}"/>
                 <TextBlock Text="Prod. year:" Style="{StaticResource TextBlockTheme}"/>
             </StackPanel>
 
@@ -56,6 +62,9 @@
         <StackPanel Grid.Column="1"
                     Background="Transparent">
 
+            <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
+                <TextBox Style="{StaticResource TextBoxTheme}"/>
+            </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
                 <TextBox Style="{StaticResource TextBoxTheme}"/>
             </StackPanel>
@@ -106,6 +115,36 @@
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
                 <Border Style="{StaticResource CheckBoxesTheme}"/>
             </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
+                <Border Style="{StaticResource CheckBoxesTheme}"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="3"
+                    Background="Transparent"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal"
+                    Margin="0 0 15 0">
+
+            <Button Height="{StaticResource HeightLen}" Style="{StaticResource menuButton}">
+                <Border Width="120" Style="{StaticResource ApplyButtonsTheme}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Check" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Check" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Border>                
+            </Button>
+
+            <Button Height="{StaticResource HeightLen}" Style="{StaticResource menuButton}">
+                <Border Width="120" Style="{StaticResource ApplyButtonsTheme}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="ArrowAltCircleUp" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Send" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Border>
+            </Button>
 
         </StackPanel>
     </Grid>
