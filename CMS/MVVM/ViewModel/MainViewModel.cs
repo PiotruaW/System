@@ -1,4 +1,5 @@
-﻿using desktop_translator.Core;
+﻿using CMS.MVVM.Model;
+using desktop_translator.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
