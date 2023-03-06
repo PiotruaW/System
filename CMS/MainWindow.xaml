@@ -193,11 +193,9 @@
                 <ContentControl x:Name="ContentControlView"
                                 Content="{Binding CurrentView}"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Center"
+                                HorizontalAlignment="Stretch"
                                 Grid.Column="1"
-                                Grid.Row="0"
-                                Width="1120"
-                                Height="700"/>
+                                Grid.Row="0"/>
             </Grid>
         </Border>
 

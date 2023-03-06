@@ -7,7 +7,7 @@
     <sys:Double x:Key="WidthLen">240</sys:Double>
 
     <Style x:Key="StackTextBoxesTheme" TargetType="StackPanel">
-        <Setter Property="Margin" Value="10 20 0 10"/>
+        <Setter Property="Margin" Value="10 20 10 10"/>
         <Setter Property="Tag" Value="#6673b7"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Height" Value="{StaticResource HeightLen}"/>
@@ -15,7 +15,6 @@
     </Style>
 
     <Style x:Key="TextBoxTheme" TargetType="TextBox">
-        <Setter Property="Margin" Value="5 0 0 0"/>
         <Setter Property="Width" Value="{StaticResource WidthLen}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>

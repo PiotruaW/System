@@ -13,6 +13,8 @@ namespace CMS
         public MainWindow()
         {
             InitializeComponent();
+            System.Console.WriteLine("MaxWindowWidth: " + ContentControlView.Width);
+
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -46,15 +48,21 @@ namespace CMS
             if (this.WindowState == WindowState.Normal)
             {
                 this.WindowState = WindowState.Maximized;
+                double CVWidth = GridMainPanel.ActualWidth - PanelColumn.Width.Value;
+                ContentControlView.Width = CVWidth;
+                System.Console.WriteLine("MaxWindowWidth: " + ContentControlView.Width);
             }
             else
             {
                 this.WindowState = WindowState.Normal;
+                double CVWidth = GridMainPanel.ActualWidth - PanelColumn.Width.Value;
+                ContentControlView.Width = CVWidth;
+                System.Console.WriteLine("NormalWindowWidth: " + ContentControlView.Width);
             }
         }
 
         private void HidePanel(object sender, RoutedEventArgs e)
-        { 
+        {
             if (PanelColumn.Width.Value == 50)
             {
                 PanelColumn.Width = new GridLength(160);
@@ -62,6 +70,8 @@ namespace CMS
                 HideIcon.Icon = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
                 MainPanelSeparator.Width = 140;
                 ContentControlView.Width = CVWidth;
+
+                System.Console.WriteLine("Showd: " + ContentControlView.Width);
             }
             else
             {
@@ -70,6 +80,7 @@ namespace CMS
                 HideIcon.Icon = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
                 MainPanelSeparator.Width = 40;
                 ContentControlView.Width = CVWidth;
+                System.Console.WriteLine("Hidden: " + ContentControlView.Width);
             }
         }
     }
