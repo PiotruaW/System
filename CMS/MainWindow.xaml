@@ -154,7 +154,8 @@
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}">
+                    <Button Style="{StaticResource menuButton}"
+                            Command="{Binding AddVM}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Car" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Add car" Style="{StaticResource menuButtonText}"/>

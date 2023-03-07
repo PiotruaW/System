@@ -65,31 +65,41 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1"
-                    Background="Transparent">
+                    Background="Transparent"
+                    DataContext="{Binding AddModel}">
 
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding Owner, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding Department, UpdateSourceTrigger=PropertyChanged}"
+                         />
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding Mark, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding RegistrationPlate, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding ProdYear, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Style="{StaticResource StackTextBoxesTheme}">
-                <TextBox Style="{StaticResource TextBoxTheme}"/>
+                <TextBox Style="{StaticResource TextBoxTheme}"
+                         Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
 
         </StackPanel>
