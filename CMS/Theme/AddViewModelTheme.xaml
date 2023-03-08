@@ -6,25 +6,23 @@
     <sys:Double x:Key="HeightLen">50</sys:Double>
     <sys:Double x:Key="WidthLen">240</sys:Double>
 
-    <Style x:Key="StackTextBoxesTheme" TargetType="StackPanel">
+    <Style x:Key="DockTextBoxesTheme" TargetType="DockPanel">
         <Setter Property="Margin" Value="10 20 10 10"/>
-        <Setter Property="Tag" Value="#6673b7"/>
-        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Tag" Value="#FF878787"/>
         <Setter Property="Height" Value="{StaticResource HeightLen}"/>
-        <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
 
     <Style x:Key="TextBoxTheme" TargetType="TextBox">
         <Setter Property="Width" Value="{StaticResource WidthLen}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="DockPanel.Dock" Value="Right"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="FontSize" Value="25"/>
-        <Setter Property="Foreground" Value="#6673b7"/>
+        <Setter Property="Foreground" Value="#FF878787"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border BorderBrush="#6673b7" 
+                    <Border BorderBrush="#FF878787" 
                             BorderThickness="1" 
                             CornerRadius="10">
                         <Grid>
@@ -38,29 +36,33 @@
 
     <Style x:Key="IconImageTheme" TargetType="fa:IconImage">
         <Setter Property="Width" Value="40"/>
-        <Setter Property="Margin" Value="10 0 5 0"/>
+        <Setter Property="DockPanel.Dock" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="#707db2"/>
+        <Setter Property="Foreground" Value="#FF878787"/>
     </Style>
 
     <Style x:Key="TextBlockTheme" TargetType="TextBlock">
         <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Margin" Value="10 0 10 0"/>
+        <Setter Property="DockPanel.Dock" Value="Right"/>
+        <Setter Property="Padding" Value="10 0 0 0 "/>
+        <Setter Property="Margin" Value="0 0 10 0"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="#707db2"/>
+        <Setter Property="Foreground" Value="#FF878787"/>
     </Style>
 
     <Style x:Key="CheckBoxesTheme" TargetType="Border">
-        <Setter Property="BorderBrush" Value="#6673b7"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+        <Setter Property="DockPanel.Dock" Value="Right"/>
+        <Setter Property="BorderBrush" Value="#FF878787"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="Width" Value="{StaticResource HeightLen}"/>
     </Style>
 
     <Style x:Key="ApplyButtonsTheme" TargetType="Border">
-        <Setter Property="BorderBrush" Value="#6673b7"/>
+        <Setter Property="BorderBrush" Value="#FF878787"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="CornerRadius" Value="8"/>
         <Setter Property="Height" Value="{StaticResource HeightLen}"/>
         <Setter Property="Width" Value="60"/>
     </Style>

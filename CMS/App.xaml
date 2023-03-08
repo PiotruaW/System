@@ -21,6 +21,10 @@
                 <view:AddView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:ModifyOwnerModel}">
+                <view:ModifyOwner/>
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewModel:ListViewModel}">
                 <view:ListView/>
             </DataTemplate>

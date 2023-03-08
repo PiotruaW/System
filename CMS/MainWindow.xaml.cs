@@ -9,14 +9,11 @@ namespace CMS
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
-            System.Console.WriteLine("MaxWindowWidth: " + ContentControlView.Width);
-
         }
-
+    
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
@@ -48,39 +45,26 @@ namespace CMS
             if (this.WindowState == WindowState.Normal)
             {
                 this.WindowState = WindowState.Maximized;
-                double CVWidth = GridMainPanel.ActualWidth - PanelColumn.Width.Value;
-                ContentControlView.Width = CVWidth;
-                System.Console.WriteLine("MaxWindowWidth: " + ContentControlView.Width);
             }
             else
             {
                 this.WindowState = WindowState.Normal;
-                double CVWidth = GridMainPanel.ActualWidth - PanelColumn.Width.Value;
-                ContentControlView.Width = CVWidth;
-                System.Console.WriteLine("NormalWindowWidth: " + ContentControlView.Width);
             }
         }
-
+                        
         private void HidePanel(object sender, RoutedEventArgs e)
         {
-            if (PanelColumn.Width.Value == 50)
+            if (PanelColumn.Width.Value == 160)
             {
-                PanelColumn.Width = new GridLength(160);
-                double CVWidth = GridMainPanel.ActualWidth - PanelColumn.Width.Value;
+                PanelColumn.Width = new GridLength(55);
                 HideIcon.Icon = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-                MainPanelSeparator.Width = 140;
-                ContentControlView.Width = CVWidth;
-
-                System.Console.WriteLine("Showd: " + ContentControlView.Width);
+                MainPanelSeparator.Width = 40;
             }
             else
             {
-                PanelColumn.Width = new GridLength(50);
-                double CVWidth = GridMainPanel.ActualWidth - PanelColumn.Width.Value;
+                PanelColumn.Width = new GridLength(160);
                 HideIcon.Icon = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
-                MainPanelSeparator.Width = 40;
-                ContentControlView.Width = CVWidth;
-                System.Console.WriteLine("Hidden: " + ContentControlView.Width);
+                MainPanelSeparator.Width = 140;
             }
         }
     }

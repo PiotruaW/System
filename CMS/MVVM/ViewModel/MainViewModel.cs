@@ -11,6 +11,7 @@ namespace CMS.MVVM.ViewModel
     class MainViewModel : ObservableObject
     {
         public AddViewModel AddVM { get; set; }
+        public ModifyOwnerModel ModifyOwnerVM { get; set; }
         public ContactViewModel ContactVM { get; set; }
         public HomeViewModel HomeVM { get; set; }
         public ListViewModel ListVM { get; set; }
@@ -19,6 +20,7 @@ namespace CMS.MVVM.ViewModel
 
 
         public RelayCommand AddViewCommand { get; set; }
+        public RelayCommand ModifyOwnerViewCommand { get; set; }
         public RelayCommand ContactViewCommand { get; set; }
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ListViewCommand { get; set; }
@@ -41,6 +43,7 @@ namespace CMS.MVVM.ViewModel
         public MainViewModel()
         {
             AddVM = new AddViewModel();
+            ModifyOwnerVM = new ModifyOwnerModel();
             ContactVM = new ContactViewModel();
             HomeVM = new HomeViewModel();
             ListVM = new ListViewModel();
@@ -52,6 +55,11 @@ namespace CMS.MVVM.ViewModel
             AddViewCommand = new RelayCommand(o =>
             {
                 CurrentView = AddVM;
+            });
+
+            ModifyOwnerViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = ModifyOwnerVM;
             });
 
             ContactViewCommand = new RelayCommand(o =>

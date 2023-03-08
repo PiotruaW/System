@@ -70,6 +70,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\CommandGroup.cs" />
+    <Compile Include="Core\Converter.cs" />
     <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -89,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\ListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ModifyOwner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,12 +124,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\Model\AddModel.cs" />
+    <Compile Include="MVVM\Model\ModifyOwner.cs" />
     <Compile Include="MVVM\Model\ContactModel.cs" />
     <Compile Include="MVVM\Model\HomeModel.cs" />
     <Compile Include="MVVM\Model\ListModel.cs" />
     <Compile Include="MVVM\Model\NotificationsModel.cs" />
     <Compile Include="MVVM\Model\SettingsModel.cs" />
     <Compile Include="MVVM\ViewModel\AddViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ModifyOwnerModel.cs" />
     <Compile Include="MVVM\ViewModel\ContactViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ListViewModel.cs" />
@@ -142,6 +149,9 @@
     </Compile>
     <Compile Include="MVVM\View\ListView.xaml.cs">
       <DependentUpon>ListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ModifyOwner.xaml.cs">
+      <DependentUpon>ModifyOwner.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\NotificationsView.xaml.cs">
       <DependentUpon>NotificationsView.xaml</DependentUpon>
@@ -162,6 +172,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
