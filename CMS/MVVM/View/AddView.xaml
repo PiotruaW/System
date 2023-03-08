@@ -46,81 +46,89 @@
         </Border>
         
         <Grid Grid.Row="1">
-            <ScrollViewer>
-                <WrapPanel Orientation="Horizontal">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-                    <StackPanel Grid.Column="0"
-                            Background="Transparent"
-                            Margin=" 10 0 0 0"
-                            VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+            <WrapPanel Orientation="Vertical" FlowDirection="LeftToRight"
+               Grid.Column="0" Width="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}">
+                <WrapPanel.Resources>
+                    <Style TargetType="DockPanel">
+                        <Setter Property="Margin" Value="0 0 10 10" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Value="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}">
+                            <Setter Property="Grid.Column" Value="1"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </WrapPanel.Resources>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox DockPanel.Dock="Right" Style="{StaticResource TextBoxTheme}" Text="{Binding Owner, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Owner:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="IdCard" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox DockPanel.Dock="Right" Style="{StaticResource TextBoxTheme}" Text="{Binding Owner, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Owner:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="IdCard" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Department, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Department:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="CropAlt" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Department, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Department:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="CropAlt" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Type:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="Pager" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Type:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="Pager" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Brand:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="Warehouse" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Brand:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="Warehouse" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Model:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="Car"  Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Model:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="Car"  Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding RegistrationPlate, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Registration plate:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="Minus" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding RegistrationPlate, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Registration plate:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="Minus" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding ProdYear, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Prod. year:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="CalendarAlt" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding ProdYear, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Prod. year:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="CalendarAlt" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
 
-                        <DockPanel Style="{StaticResource DockTextBoxesTheme}">
-                            <Border Style="{StaticResource CheckBoxesTheme}"/>
-                            <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Text="Mileage:" Style="{StaticResource TextBlockTheme}"/>
-                            <fa:IconImage Icon="ArrowsAltH" Style="{StaticResource IconImageTheme}"/>
-                            <TextBlock/>
-                        </DockPanel>
-
-                    </StackPanel>
-                </WrapPanel>
-            </ScrollViewer>
+                <DockPanel Style="{StaticResource DockTextBoxesTheme}">
+                    <Border Style="{StaticResource CheckBoxesTheme}"/>
+                    <TextBox Style="{StaticResource TextBoxTheme}" Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Mileage:" Style="{StaticResource TextBlockTheme}"/>
+                    <fa:IconImage Icon="ArrowsAltH" Style="{StaticResource IconImageTheme}"/>
+                    <TextBlock/>
+                </DockPanel>
+            </WrapPanel>
+            <ScrollBar Grid.Column="1" Orientation="Vertical" />
         </Grid>
     </Grid>
 </UserControl>
